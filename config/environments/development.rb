@@ -51,4 +51,7 @@ Rails.application.configure do
     Bullet.add_footer    = true
     Bullet.add_whitelist type: :unused_eager_loading, class_name: "MaterialPart", association: :translations
   end
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 end

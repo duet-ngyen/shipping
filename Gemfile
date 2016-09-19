@@ -18,6 +18,10 @@ gem 'nprogress-rails'
 gem "jquery-turbolinks"
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'devise'
+gem 'aui_flash', '~> 0.1.5'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 group :development, :test do
   gem 'byebug'
   gem 'pry'

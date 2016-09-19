@@ -8,7 +8,15 @@
 </head>
 <body>
 
-<%= yield %>
+  <%= render "shared/header" %>
+
+  <div style="clear: both"></div>
+  <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <div id="main-container">
+      <%= render "shared/messages" %>
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>

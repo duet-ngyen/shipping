@@ -13,6 +13,10 @@
  *= require nprogress
  *= require nprogress-bootstrap
  *= require nprogress-turbolinks5
+ *= require aui-flash
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

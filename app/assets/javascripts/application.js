@@ -15,4 +15,7 @@
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
+//= require aui-flash
+//= require jquery
+//= require bootstrap-sprockets
 //= require_tree .
