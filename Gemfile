@@ -23,6 +23,7 @@ gem 'aui_flash', '~> 0.1.5'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'browserify-rails'
 gem 'react-rails'
+gem "js-routes"
 
 group :development, :test do
   gem 'byebug'

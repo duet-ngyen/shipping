@@ -7,7 +7,7 @@
 //noinspection JSAnnotator
 const app = window.app = global.app = {};
 
-// import IndexComponent from './components/pages/index.es6.jsx';
+import Commodities from './components/commodities/commodities.es6.jsx';
 //
 // // Expose components to global scope
-// app.IndexComponent = IndexComponent;
+app.Commodities = Commodities;
