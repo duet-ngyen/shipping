@@ -23,9 +23,6 @@
 .DS_Store
 /tags
 
-# Ignore Gemfile.lock
-/Gemfile.lock
-
 # Ignore RubyMine config
 /.idea
 
