@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: [:shop_owner, :shipper]
+
+  has_many :post_commodities, class_name: "Commodity", foreign_key: :shop_owner_id
+  has_many :pick_commodities, class_name: "Commodity", foreign_key: :shipper_id
 end
