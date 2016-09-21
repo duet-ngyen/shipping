@@ -41,7 +41,7 @@ class Commodities extends Component {
         }
 
         return (
-            <div className="ui stackable two column grid">
+            <div id="commodity-index" className="col-xs-12">
                 {cardsCommodity}
             </div>
         );

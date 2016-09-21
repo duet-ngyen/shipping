@@ -6,17 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="ui grid">
-
+<body>
   <%= render "shared/header" %>
 
-  <div style="clear: both"></div>
-  <div class="">
-    <div id="main-container">
+  <div id="main-container">
+    <div >
       <%= render "shared/messages" %>
-      <%= yield %>
     </div>
+    <div style="clear: both"></div>
+    <%= yield %>
   </div>
-
 </body>
 </html>

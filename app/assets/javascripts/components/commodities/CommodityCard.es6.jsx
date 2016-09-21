@@ -16,7 +16,7 @@ class CommodityCard extends Component{
     }
 
     return(
-      <div className="comodity-card column">
+      <div className="commodity-card col-md-6">
         <div id="container">
           <nav>
             <ul>

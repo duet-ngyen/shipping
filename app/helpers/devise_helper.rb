@@ -19,14 +19,17 @@ module DeviseHelper
                  resource: resource.class)
 
     html = <<-HTML
-    <div class="aui-message aui-message-error closeable">
-      <p class="title">
-        <span class="aui-icon icon-error"></span>
-        <strong>#{sentence}</strong>
-      </p>
-      <p>#{messages}</p>
-      <span class="aui-icon icon-close" role="button" tabindex="0"></span>
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="aui-message aui-message-error closeable">
+        <p class="title">
+          <span class="aui-icon icon-error"></span>
+          <strong>#{sentence}</strong>
+        </p>
+        <p>#{messages}</p>
+        <span class="aui-icon icon-close" role="button" tabindex="0"></span>
+      </div>
     </div>
+    <div style="clear:both"></div>
     HTML
 
     html.html_safe
@@ -43,6 +46,7 @@ module DeviseHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
   def alert_from_devise(alert)
     if alert.instance_of? Array
       results = ''

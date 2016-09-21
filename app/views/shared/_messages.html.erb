@@ -1,24 +1,24 @@
-<% flash.each do |message_type, message| %>
-  <% if message.kind_of?(Array) %>
-    <div class="aui-message aui-message-<%= message_type == "notice" ? "success" : "error" %> closeable">
-      <p class="title">
-        <strong><%= message_type.upcase %></strong>
-      </p>
-      <% message.each do |msg| %>
-        <ul>
-          <li>
-            <%= msg %>
-          </li>
-        </ul>
-      <% end %>
-      <span class="aui-icon icon-close" role="button" tabindex="0"></span>
-    </div>
-
-
-  <% else %>
-    <div class="aui-message aui-message-<%= message_type == "notice" ? "success" : "error" %> closeable">
-      <%= message %>
-      <span class="aui-icon icon-close" role="button" tabindex="0"></span>
-    </div>
+<div class="col-sm-8 col-sm-offset-2">
+  <% flash.each do |message_type, message| %>
+    <% if message.kind_of?(Array) %>
+      <div class="aui-message aui-message-<%= message_type == "notice" ? "success" : "error" %> closeable">
+        <p class="title">
+          <strong><%= message_type.upcase %></strong>
+        </p>
+        <% message.each do |msg| %>
+          <ul>
+            <li>
+              <%= msg %>
+            </li>
+          </ul>
+        <% end %>
+        <span class="aui-icon icon-close" role="button" tabindex="0"></span>
+      </div>
+    <% else %>
+      <div class="aui-message aui-message-<%= message_type == "notice" ? "success" : "error" %> closeable">
+        <%= message %>
+        <span class="aui-icon icon-close" role="button" tabindex="0"></span>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
