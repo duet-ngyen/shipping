@@ -1,0 +1,20 @@
+h2
+  = @commodity.title
+div
+  | Posted by:
+  = @commodity.shop_owner.full_name
+div
+  | Ship from:
+  = @commodity.departures
+div
+  | Ship to:
+  = @commodity.destination
+div
+  | Price deposite:
+  = @commodity.price_deposite
+div
+  | Price wave:
+  = @commodity.price_wage
+div
+  | Description:
+  = @commodity.description
