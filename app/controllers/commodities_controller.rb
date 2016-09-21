@@ -17,12 +17,12 @@ class CommoditiesController < ApplicationController
   end
 
   def show
-
+    @bids = @commodity.bids
   end
 
   private
 
   def set_commodity
-    @commodity = Commodity.find_by(params[:id])
+    @commodity = Commodity.preload(:bids).find(params[:id])
   end
 end

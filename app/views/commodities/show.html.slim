@@ -18,3 +18,9 @@ div
 div
   | Description:
   = @commodity.description
+
+| == Bidding
+
+.bids
+  - @bids.each do |bid|
+    = bid.description
