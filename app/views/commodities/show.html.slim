@@ -21,6 +21,10 @@ div
 
 | == Bidding
 
+- if current_user.present?
+  = form_tag commodity_bids_path(@commodity), method: :post do
+    = text_field_tag :description
+    = submit_tag "Bid"
+
 .bids
-  - @bids.each do |bid|
-    = bid.description
+  = render "bid"

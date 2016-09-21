@@ -17,12 +17,12 @@ class CommoditiesController < ApplicationController
   end
 
   def show
-    @bids = @commodity.bids
+    @bids = @commodity.bids.preload(:shipper).order("created_at desc")
   end
 
   private
 
   def set_commodity
-    @commodity = Commodity.preload(:bids).find(params[:id])
+    @commodity = Commodity.preload(:shop_owner).find(params[:id])
   end
 end
