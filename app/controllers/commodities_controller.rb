@@ -17,6 +17,7 @@ class CommoditiesController < ApplicationController
   end
 
   def show
+    @bid = Bid.new
     @bids = @commodity.bids.preload(:shipper).order("created_at desc")
   end
 
