@@ -17,10 +17,9 @@
 //= require nprogress-turbolinks
 //= require aui-flash
 //= require jquery
-//= require bootstrap-sprockets
+//= require semantic-ui
 //= require react
 //= require react_ujs
 //= require components
 //= require js-routes
-
 //= require_tree .

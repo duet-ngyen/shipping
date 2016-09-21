@@ -18,5 +18,12 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "semantic-ui";
+
+body {
+  background: url('https://www.cubby.com/p/_b743757213bf4788927e4d2e04004f20/bck.jpg') repeat;
+  font-family: Georgia, Verdana, 'Lucida Sans Unicode', sans-serif;
+  font-size: 12px;
+  color: #999;
+  line-height: 1;
+}

@@ -9,7 +9,7 @@ class CreateCommodities < ActiveRecord::Migration[5.0]
       t.float :price_wage
       t.string :departures
       t.string :destination
-      t.boolean :picked
+      t.boolean :picked, default: false
 
       t.timestamps
     end

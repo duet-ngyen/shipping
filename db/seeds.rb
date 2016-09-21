@@ -26,7 +26,7 @@ puts "Creating Commidity..."
     price_wage: Faker::Commerce.price,
     departures: Faker::Address.city,
     destination: Faker::Address.city,
-    picked: true
+    picked: [true, false].sample
   )
 end
 print "Done"

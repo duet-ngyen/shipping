@@ -20,7 +20,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'aui_flash', '~> 0.1.5'
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'browserify-rails'
 gem 'react-rails'
 gem "js-routes"
