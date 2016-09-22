@@ -1,4 +1,5 @@
 class CommoditiesController < ApplicationController
+  authorize_resource
   before_action :set_commodity, only: [:show]
 
   def index

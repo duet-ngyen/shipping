@@ -68,6 +68,7 @@ GEM
       uniform_notifier (~> 1.10.0)
     byebug (9.0.5)
     callsite (0.0.11)
+    cancancan (1.15.0)
     capybara (2.8.1)
       addressable
       mime-types (>= 1.16)
@@ -327,6 +328,7 @@ DEPENDENCIES
   browserify-rails
   bullet
   byebug
+  cancancan (~> 1.10)
   capybara
   coffee-rails (~> 4.2)
   config

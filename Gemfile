@@ -25,6 +25,7 @@ gem 'react-rails'
 gem "js-routes"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
+gem 'cancancan', '~> 1.10'
 
 
 group :development, :test do
