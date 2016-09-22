@@ -23,3 +23,11 @@
 //= require js-routes
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+$(document).ready(function(){
+  $(".icon-close").click(function(){
+    console.log("hide");
+    $(this).parent().slideUp();
+  })
+});

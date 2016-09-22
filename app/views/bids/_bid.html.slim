@@ -1,5 +1,5 @@
-#bids
-  .bid-info
+#bid
+  div class=(bid.shipper_id == current_user.id ? "bid-info your-bid" : "bid-info")
     .field
       = link_to bid.shipper.full_name, user_path(bid.shipper)
       = " "
@@ -12,4 +12,3 @@
   - if @commodity.shop_owner == current_user
     .action
       i class="fa fa-check" aria-hidden="true"
-  hr

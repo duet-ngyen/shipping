@@ -1,3 +1,6 @@
+ruby:
+  disabled = @commodity.bids.map(&:shipper_id).include?(current_user.id) ? true :false
+
 #commodity-details
   h2
     = @commodity.title
@@ -41,8 +44,9 @@
   hr
   h3
     = t "commodity.bidding"
-
-  - if current_user.present?
+  - if @commodity.bids.map(&:shipper_id).include?(current_user.id)
+    | You bided this commodity
+  - if current_user.present? && current_user.id != @commodity.shop_owner_id && !disabled
     = render "bids/bid_form"
 
   = render @bids

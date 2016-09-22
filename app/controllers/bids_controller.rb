@@ -1,4 +1,6 @@
 class BidsController < ApplicationController
+  authorize_resource
+
   def create
     commodity = Commodity.find_by(id: params[:commodity_id])
     bid = commodity.bids.new(
