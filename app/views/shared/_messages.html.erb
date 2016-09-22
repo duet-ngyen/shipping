@@ -1,7 +1,7 @@
 <div class="col-sm-8 col-sm-offset-2">
   <% flash.each do |message_type, message| %>
     <% if message.kind_of?(Array) %>
-      <div class="aui-message aui-message-<%= message_type == "notice" ? "success" : "error" %> closeable">
+      <div class="aui-message aui-message-<%= message_type %> closeable">
         <p class="title">
           <strong><%= message_type.upcase %></strong>
         </p>
@@ -15,7 +15,7 @@
         <span class="aui-icon icon-close" role="button" tabindex="0"></span>
       </div>
     <% else %>
-      <div class="aui-message aui-message-<%= message_type == "notice" ? "success" : "error" %> closeable">
+      <div class="aui-message aui-message-<%= message_type %> closeable">
         <%= message %>
         <span class="aui-icon icon-close" role="button" tabindex="0"></span>
       </div>

@@ -1,7 +1,15 @@
-.bid
-  .field
-    = bid.shipper.full_name
-  .field
-    = bid.shipper.phone_number
-  .field
-    = bid.description
+#bids
+  .bid-info
+    .field
+      = link_to bid.shipper.full_name, user_path(bid.shipper)
+      = " "
+      em
+        | (
+        = bid.shipper.phone_number
+        | )
+    .field
+      = bid.description
+  - if @commodity.shop_owner == current_user
+    .action
+      i class="fa fa-check" aria-hidden="true"
+  hr

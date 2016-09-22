@@ -1,27 +1,48 @@
-h2
-  = @commodity.title
-div
-  | Posted by:
-  = @commodity.shop_owner.full_name
-div
-  | Ship from:
-  = @commodity.departures
-div
-  | Ship to:
-  = @commodity.destination
-div
-  | Price deposite:
-  = @commodity.price_deposite
-div
-  | Price wave:
-  = @commodity.price_wage
-div
-  | Description:
-  = @commodity.description
+#commodity-details
+  h2
+    = @commodity.title
+  div.field
+    div.label-commodity-details
+      = t "commodity.post_by"
+    span.value-commodity-details
+      = link_to @commodity.shop_owner.full_name, user_path(@commodity.shipper)
+  div.field
+    div.label-commodity-details
+      = t "commodity.contact"
+    span.value-commodity-details
+      = @commodity.shop_owner.phone_number
+  div.clear-both.field
+    span.label-commodity-details
+      = t "commodity.ship_from"
+    span.value-commodity-details
+      = @commodity.departures
+  div.clear-both.field
+    span.label-commodity-details
+      = t "commodity.ship_to"
+    span.value-commodity-details
+      = @commodity.destination
+  div.clear-both.field
+    span.label-commodity-details
+      = t "commodity.price_deposite"
+    span.value-commodity-details
+      = @commodity.price_deposite
+  div.clear-both.field
+    span.label-commodity-details
+      = t "commodity.price_wage"
+    span.value-commodity-details
+      = @commodity.price_wage
+  div.clear-both.field
+    span.label-commodity-details
+      = t "commodity.description"
+    span.value-commodity-details
+      = @commodity.description
 
-| == Bidding
+  div.clear-both.field
+  hr
+  h3
+    = t "commodity.bidding"
 
-- if current_user.present?
-  = render "bids/bid_form"
+  - if current_user.present?
+    = render "bids/bid_form"
 
-= render @bids
+  = render @bids

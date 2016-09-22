@@ -24,6 +24,7 @@ gem 'browserify-rails'
 gem 'react-rails'
 gem "js-routes"
 gem 'bootstrap-sass', '~> 3.3.6'
+gem "font-awesome-rails"
 
 
 group :development, :test do

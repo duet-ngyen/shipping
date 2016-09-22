@@ -1,3 +1,6 @@
-= form_for [@commodity, @bid] do |f|
-  = f.text_field :description
-  = f.submit "Bid"
+#bid-form
+  = form_for [@commodity, @bid] do |f|
+    .field
+      = f.text_area :description, placeholder: t("bid_form.placeholder"), class: "form-control bid-description", rows: 3
+    .action
+      = f.submit "Bid", class: "btn btn-primary btn-lg btn-bid"

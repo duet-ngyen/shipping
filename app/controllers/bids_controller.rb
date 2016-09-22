@@ -8,7 +8,7 @@ class BidsController < ApplicationController
     if bid.save
       flash[:notice] = "Bid success"
     else
-      flash[:error] = bid.errors.full_messages
+      flash[:warning] = bid.errors.full_messages
     end
     redirect_to commodity_path(commodity.id)
   end

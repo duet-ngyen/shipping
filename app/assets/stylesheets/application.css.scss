@@ -14,6 +14,7 @@
  *= require nprogress-bootstrap
  *= require nprogress-turbolinks5
  *= require aui-flash
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -21,6 +22,7 @@
 //@import "semantic-ui";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 
 @media(max-width:767px) {
@@ -37,4 +39,8 @@
 
 body {
   background-color: #d2d2d2;
+}
+
+.clear-both {
+  clear: both;
 }

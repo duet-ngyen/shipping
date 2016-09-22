@@ -2,3 +2,16 @@ en:
   navbar-brand: Viet shipping
   page_not_found: Page not found or you haven't permission to access this page
   hello: "Hello world"
+
+  commodity:
+    post_by: Post by
+    contact: Contact
+    ship_from: Ship from
+    ship_to: To
+    price_deposite: Price Deposite
+    price_wage: Price wage
+    description: Description
+    bidding: Bidding...
+
+  bid_form:
+    placeholder: Reason why we choose you...

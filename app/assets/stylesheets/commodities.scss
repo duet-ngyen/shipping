@@ -197,3 +197,22 @@
     }
   }
 }
+
+.label-commodity-details{
+  width: 200px;
+  float: left;
+}
+
+.value-commodity-details {
+  clear:both;
+}
+
+#commodity-details {
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  .field {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
