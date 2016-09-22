@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   include CanCan::ControllerAdditions
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:warning] = "You are not authorize"
-    redirect_to static_pages_home_path
+    flash[:warning] = "Page not found or you haven't permission to acess this page"
+    redirect_to root_path
   end
 
   protect_from_forgery with: :exception

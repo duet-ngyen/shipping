@@ -2,12 +2,20 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user ||= User.new
+
     if user
       can :create, Bid
+      can :read, Commodity do |commodity|
+        commodity.shop_owner_id == user.id || commodity.picked == false
+      end
     else
+      can :show, Commodity do |commodity|
+        commodity.picked == false
+      end
     end
 
-    can [:index, :show], Commodity
+    can [:index], Commodity
 
     # Define abilities for the passed in user here. For example:
     #

@@ -6,6 +6,11 @@ ruby:
     = @commodity.title
   div.field
     div.label-commodity-details
+      = t "commodity.status"
+    span.value-commodity-details
+      = @commodity.picked ? "picked" : "available"
+  div.field
+    div.label-commodity-details
       = t "commodity.post_by"
     span.value-commodity-details
       = link_to @commodity.shop_owner.full_name, user_path(@commodity.shipper)
