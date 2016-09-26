@@ -14,6 +14,7 @@ class CommodityCard extends Component{
   handleOnClickTag(e){
     var tag = e.target.text;
     this.props.onTagClick(tag);
+    $('html,body').scrollTop(0);
     e.preventDefault();
   }
 

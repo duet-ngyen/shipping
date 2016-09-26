@@ -67,6 +67,7 @@ class Commodities extends Component {
         this.setState({didFetchData: true});
       }.bind(this)
     });
+    $('html,body').scrollTop(0);
     e.preventDefault();
   }
 
