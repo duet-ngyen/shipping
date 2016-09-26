@@ -12,9 +12,9 @@ class CommodityCard extends Component{
   }
 
   handleOnClickTag(e){
-    e.preventDefault();
     var tag = e.target.text;
     this.props.onTagClick(tag);
+    e.preventDefault();
   }
 
   render(){
