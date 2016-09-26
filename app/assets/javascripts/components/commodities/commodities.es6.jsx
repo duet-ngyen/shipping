@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import CommodityCard from 'components/commodities/CommodityCard.es6.jsx'
+import ReactPaginate from 'react-paginate';
+import CommodityCard from 'components/commodities/CommodityCard.es6.jsx';
+
+window.React = React;
 
 class Commodities extends Component {
     constructor(props){
@@ -7,6 +10,8 @@ class Commodities extends Component {
         this.state = {
             commodities: [],
             users: [],
+            current_user: [],
+            bids:[],
             didFetchData: false
         };
     }
@@ -18,20 +23,43 @@ class Commodities extends Component {
             error: function (xhr, status, error) {
                 console.log('AJAX Error: ' + status + error);
             },
-            success: function (respone) {
-                this.setState({commodities: respone["commodities"]});
-                this.setState({users: respone["users"]});
+            success: function (response) {
+                this.setState({commodities: response["commodities"]});
+                this.setState({users: response["users"]});
+                this.setState({current_user: response["current_user"]});
+                this.setState({bids: response["bids"]});
                 this.setState({didFetchData: true});
             }.bind(this)
         });
     }
 
+    handleOnTagClick(tag_value){
+      $.ajax({
+        url: "/commodities",
+        dataType: "json",
+        data: {tag: tag_value},
+        error: function (xhr, status, error) {
+          console.log('AJAX Error: ' + status + error);
+        },
+        success: function (response) {
+          this.setState({commodities: response["commodities"]});
+          this.setState({users: response["users"]});
+          this.setState({current_user: response["current_user"]});
+          this.setState({bids: response["bids"]});
+          this.setState({didFetchData: true});
+        }.bind(this)
+      });
+    }
+
     render() {
-        if(this.state.users.length > 0 && this.state.commodities.length > 0){
+        if(this.state.users.length > 0 && this.state.commodities.length > 0 && this.state.didFetchData){
             var cardsCommodity = this.state.commodities.map((commodity) => {
                 return <CommodityCard key={commodity.id}
                                       shop_owner={find_user_by_id(this.state.users, commodity.shop_owner_id)}
-                                      commodity={commodity}></CommodityCard>
+                                      commodity={commodity}
+                                      current_user={this.state.current_user}
+                                      bids={this.state.bids}
+                                      onTagClick={this.handleOnTagClick.bind(this)}></CommodityCard>
             });
         } else if(this.state.didFetchData){
             var cardsCommodity = <div>

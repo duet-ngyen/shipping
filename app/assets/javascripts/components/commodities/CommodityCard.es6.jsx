@@ -5,14 +5,29 @@ class CommodityCard extends Component{
     super(props);
     this.state = {
       commodity:  this.props.commodity,
-      shop_owner: this.props.shop_owner
+      shop_owner: this.props.shop_owner,
+      current_user: this.props.current_user,
+      bids: this.props.bids
     }
+  }
+
+  handleOnClickTag(e){
+    e.preventDefault();
+    var tag = e.target.text;
+    this.props.onTagClick(tag);
   }
 
   render(){
     var picked = "available";
+    var bids_commodity = bids_by_commodity(this.state.bids, this.state.commodity);
+    var bided_status = bided_by_user(bids_commodity, this.state.current_user);
+
     if(this.props.commodity.picked) {
-      var picked = "picked";
+      picked = "picked";
+    } else if(bided_status){
+      picked = "bided";
+    } else if(this.state.commodity.shop_owner_id == this.state.current_user.id){
+      picked = "yours";
     }
 
     return(
@@ -20,8 +35,8 @@ class CommodityCard extends Component{
         <div id="container">
           <nav>
             <ul>
-              <li className={picked}>
-                <a href="#">{picked}</a>
+              <li className={picked} >
+                <a href="#" value={picked} onClick={this.handleOnClickTag.bind(this)}>{picked}</a>
               </li>
             </ul>
             <span>by <a href={Routes.user_path(this.state.commodity.shop_owner_id)}>{this.props.shop_owner.full_name}</a></span>

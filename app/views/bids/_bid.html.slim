@@ -1,5 +1,5 @@
 #bid
-  div class=(bid.shipper_id == current_user.id ? "bid-info your-bid" : "bid-info")
+  div class=((current_user.present?) && (bid.shipper_id == current_user.id) ? "bid-info your-bid" : "bid-info")
     .field
       = link_to bid.shipper.full_name, user_path(bid.shipper)
       = " "
